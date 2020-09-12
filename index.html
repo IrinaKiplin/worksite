@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Оформление</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="img/manifest/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/manifest/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/manifest/favicon-16x16.png">
+    <link rel="manifest" href="img/manifest/site.webmanifest">
+    <link rel="mask-icon" href="img/manifest/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="img/manifest/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="img/manifest/browseicon-arrowrconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/jquery.inputmask.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+    <script src="js/scriptJS.js" defer></script>
+
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header__container">
+
+        <nav class="menu header__menu">
+          <button class="header__toggle" type="button" aria-label="Открыть меню">
+            <span></span>
+          </button>
+          <ul class="menu__list menu__list--row">
+            <li class="menu__item">
+              <a class="menu__link" href="what-do">Услуги</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="my-work">Портфолио</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="prices"> Стоимость</a>
+            </li>
+          </ul>
+        </nav>
+        <a class="header__phone" href="tel:+7 (499) 995 55 77">+7 (499) 995-55-77</a>
+        <button class="btn button-order header__button-order button-order--icon"
+        type="button" aria-label="Заказать звонок" data-path="Заявка на звонок">Заказать звонок</button>
+      </div>
+    </header>
+    <main>
+      <section class="main-view">
+        <div class="container main-view__container">
+          <div class="main-view__column-left">
+            <h1 class="h h--1">Дмитрий Алексеев</h1>
+            <p class="main-view__comments">Frontend-разработчик и веб-верстальщик</p>
+            <button class="btn button-link main-view__button-link"
+            type="button" aria-label="Узнать больше" data-path="Заявка на письмо">Узнать больше</button>
+          </div>
+          <div class="main-view__column-right">
+            <picture class="main-view__img">
+              <source srcset="img/man.png" media="(min-width: 1024px)">
+              <img src="img/man-mobile.png" alt="Имя разработчика">
+            </picture>
+          </div>
+          <div class="elements main-view__elements"  aria-hidden="true">
+            <span class="elements__item elements__item--1">&lcub; &rcub;</span>
+            <span class="elements__item elements__item--2">&lcub; &rcub;</span>
+            <span class="elements__item elements__item--3">&num;</span>
+            <span class="elements__item elements__item--4">&lt;&sol;&gt;</span>
+            <span class="elements__item elements__item--5">&lt;div&gt;</span>
+            <span class="elements__item elements__item--6">&lt;div&gt;</span>
+          </div>
+        </div>
+      </section>
+      <section class="what-do" id="what-do">
+        <div class="container what-do__container">
+          <h2 class="h h--2 h-what-do">Что я делаю</h2>
+          <ul class="skills what-do__skills">
+            <li class="skills__item skills__item--1">Вёрстка лендинг–страниц и сайтов любой сложности</li>
+            <li class="skills__item skills__item--2">Адаптивная вёрстка под все браузеры и устройства</li>
+            <li class="skills__item skills__item--3">Frontend–разработка и программирование</li>
+            <li class="skills__item skills__item--4">Исправление и доработка существующей вёрстки</li>
+          </ul>
+          <button class="btn button-link what-do__button-link"
+          type="button" aria-label="Узнать стоимость" data-path="Заявка на письмо">Узнать стоимость</button>
+        </div>
+      </section>
+      <section class="my-work" id="my-work">
+        <div class="container my-work__container">
+          <h2 class="h h--2">Примеры моих работ</h2>
+          <div class="slider">
+            <ul class="slider__list">
+              <li class="slider__item">
+                <a class="slider__link" href="http://yandex.ru" target="_blank">
+                  <picture>
+                    <source srcset="img/slide-1.png" media="(min-width: 1024px)">
+                    <img class="slider__img" src="img/slide-1-mobile.png" alt="Сайт психолога Веры Антоновой">
+                  </picture>
+                  <p class="slider__text">Сайт психолога Веры Антоновой</p>
+                </a>
+              </li>
+              <li class="slider__item">
+                <a class="slider__link" href="http://yandex.ru" target="_blank">
+                  <picture>
+                    <source srcset="img/slide-2.png" media="(min-width: 1024px)">
+                    <img class="slider__img" src="img/slide-2-mobile.png" alt="Сайт магазина детской одежды">
+                  </picture>
+                  <p class="slider__text">Сайт магазина детской одежды</p>
+                </a>
+              </li>
+              <li class="slider__item">
+                <a class="slider__link" href="http://yandex.ru" target="_blank">
+                  <picture>
+                    <source srcset="img/slide-3.png" media="(min-width: 1024px)">
+                    <img class="slider__img" src="img/slide-3-mobile.png" alt="Сайт магазина «Рыболов»">
+                  </picture>
+                  <p class="slider__text">Сайт магазина «Рыболов»</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <button class="slider__button slider__button--prev" type="button" aria-label="Предыдущий слайд"></button>
+          <button class="slider__button slider__button--next" type="button" aria-label="Следующий слайд"></button>
+          <div class="paginator slider__pagination" aria-hidden="true"></div>
+          <button class="btn button-link my-work__button-link"
+          type="button" aria-label="Заказать проект" data-path="Заявка на письмо">Заказать проект</button>
+        </div>
+      </section>
+      <section class="prices" id="prices">
+        <div class="container prices__container">
+          <h2 class="h prices__h">Адаптивная верстка под все устройства и&nbsp;браузеры&nbsp;от 1000 рублей всего за&nbsp;4&nbsp;часа.*</h2>
+          <p class="prices__comments">Cрок и стоимость могут отличаться от заявленных и рассчитываются индивидуально, <br>в зависимости от&nbsp;сложности задач</p>
+          <div class="elements prices__elements"  aria-hidden="true">
+            <span class="elements__item elements__item--nobg elements__item--7">&lcub; &rcub;</span>
+            <span class="elements__item elements__item--nobg elements__item--8">&lcub; &rcub;</span>
+            <span class="elements__item elements__item--nobg elements__item--9">&num;</span>
+            <span class="elements__item elements__item--nobg elements__item--10">&lt;&sol;&gt;</span>
+            <span class="elements__item elements__item--nobg elements__item--11">&lt;div&gt;</span>
+          </div>
+        </div>
+      </section>
+      <div class="forms">
+        <div class="form-overlay">
+          <form class="form form--call" data-target="Заявка на звонок">
+            <input type="hidden" name="project_name" value="Тест">
+            <input type="hidden" name="admin_email" value="palladium-00@mail.ru">
+            <input type="hidden" name="form_subject" value="Тема">
+            <h1 class="form__heading">Заказать звонок</h1>
+            <label class="form__input">
+              <span>Ваше имя</span>
+              <input class="form__data" type="text" name="Имя">
+            </label>
+            <label class="form__input">
+              <span>Номер телефона</span>
+              <input class="form__data" type="tel" name="Телефон" placeholder="+7 (___) ___-__-__">
+            </label>
+            <label class="form__check">
+              <input type="checkbox">
+              <span>Нажатием на кнопку я даю свое согласие на обработку персональных данных
+              в соответствии с указанными здесь условиями</span>
+            </label>
+            <button class="form__button" type="submit" value="Заказать">Заказать</button>
+          </form>
+          <form class="form form--post" data-target="Заявка на письмо">
+            <input type="hidden" name="project_name" value="Тест">
+            <input type="hidden" name="admin_email" value="palladium-00@mail.ru">
+            <input type="hidden" name="form_subject" value="Тема">
+            <h1 class="form__heading">Заказать звонок</h1>
+            <label class="form__input">
+              <span>Ваше имя</span>
+              <input class="form__data" type="text" name="Имя">
+            </label>
+            <label class="form__input">
+              <span>Номер телефона</span>
+              <input class="form__data" type="tel" name="Телефон" placeholder="+7 (___) ___-__-__">
+            </label>
+            <label class="form__input">
+              <span>Адрес электронной почты</span>
+              <input class="form__data" type="email" name="ЭлектроннаяПочта"
+              placeholder="e.g.username@example.com">
+            </label>
+            <label class="form__check">
+              <input type="checkbox">
+              <span>Нажатием на кнопку я даю свое согласие на обработку персональных данных
+              в соответствии с указанными здесь условиями</span>
+            </label>
+            <button class="form__button" type="submit" value="Заказать">Заказать</button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container footer__container">
+        <nav class="menu">
+          <ul class="menu__list menu__list--col">
+            <li class="menu__item">
+              <a class="menu__link" href="what-do">Услуги</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="my-work">Портфолио</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="prices">Стоимость</a>
+            </li>
+          </ul>
+        </nav>
+        <address class="footer__contacts">
+          <a class="footer__contact" href="tel:+7 (499) 995 55 77" >
+            <span class="fa fa-phone"></span>+7 (499) 995-55-77
+          </a>
+          <a class="footer__contact" href="mailto:dmitry@alekseev.com" target="_blank">
+            <span class="fa fa-envelope"></span>dmitry@alekseev.com
+          </a>
+        </address>
+        <div class="footer__connect">
+          <button class="btn button-order footer__button-order button-order--bg"
+          type="button" aria-label="Заказать звонок" data-path="Заявка на звонок">Заказать звонок</button>
+          <ul class="social-icons footer__social-icons">
+            <li class="social-icons__item">
+              <a class="social-icons__link social-icons__link--vk" href="http://yandex.ru" target="_blank"></a>
+            </li>
+            <li class="social-icons__item">
+              <a class="social-icons__link social-icons__link--facebook" href="http://yandex.ru" target="_blank"></a>
+            </li>
+            <li class="social-icons__item">
+              <a class="social-icons__link social-icons__link--twitter" href="http://yandex.ru" target="_blank"></a>
+            </li>
+            <li class="social-icons__item">
+              <a class="social-icons__link social-icons__link--instagram" href="http://yandex.ru" target="_blank"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
