@@ -58,12 +58,7 @@ $(document).ready(function(){
       },
       focusInvalid: false,
       rules: {
-        Телефон: {
-          required: true,
-        },
-        Имя: {
-          required: true,
-        },
+        
         ЭлектроннаяПочта: {
           required: true,
         }
