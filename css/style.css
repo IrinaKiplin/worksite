@@ -1359,25 +1359,52 @@ input {
   text-transform: uppercase;
 }
 
+.form__close {
+  border: none;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  height: 0;
+}
+
+.form__close span::before,
+.form__close span::after {
+  content: '';
+  display: block;
+  height: 5px;
+  width: 25px;
+  background-color: #fff;
+}
+
+.form__close span::before {
+  transform: translateY(17px) rotate(-45deg);
+}
+
+.form__close span::after {
+  transform: translateY(12px) rotate(45deg);
+}
 
 @media (max-width: 1023px) {
   .form {
-    padding: 10px;
+    padding: 15px;
     width: 300px;
   }
 
   .form__heading {
-    font-size: 16px;
-    margin-bottom: 20px;
+    font-size: 22px;
+    margin-bottom: 15px;
+    margin-top: 5px;
   }
 
   .form__input {
+    flex-direction: column;
+    align-items: flex-start;
     margin-bottom: 10px;
-    font-size: 10px;
+    font-size: 18px;
   }
 
   .form__data {
-    min-width: 180px;
+    min-width: 100%;
     padding: 5px 5px;
   }
 
@@ -1391,7 +1418,7 @@ input {
   }
 
   .form__check span::before {
-    top: 3px;
+    top: 4px;
     width: 10px;
     height: 10px;
     border-radius: 3px;
@@ -1406,9 +1433,24 @@ input {
   .form__button {
     margin-top: 0;
     padding: 5px 5px;
-    font-size: 14px;
+    font-size: 18px;
   }
 
+  .form__close {
+    top: 0px;
+    right: 10px;
+  }
+
+  .form__close span::before,
+  .form__close span::after {
+    height: 4px;
+    width: 17px;
+    background-color: #fff;
+  }
+
+  .form__close span::after {
+    transform: translateY(13px) rotate(45deg);
+  }
 }
 
 .error {

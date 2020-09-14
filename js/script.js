@@ -8,7 +8,7 @@ new Swiper('.slider', {
   slidesPerView: 1,
   spaceBetween: 20,
   breakpoints: {
-    1025: {
+    1024: {
       slidesPerView: 2,
       spaceBetween: 35
     },
@@ -58,7 +58,12 @@ $(document).ready(function(){
       },
       focusInvalid: false,
       rules: {
-        
+        Телефон: {
+          required: true,
+        },
+        Имя: {
+          required: true,
+        },
         ЭлектроннаяПочта: {
           required: true,
         }
@@ -104,6 +109,10 @@ function submitForm() {
 
 $('.form__button').on('click', submitForm);
 
+$('.form__close').on('click', function(e) {
+  $('.form-overlay').removeClass('form-overlay--visible');
+});
+
 let menuElements = document.querySelectorAll('.menu__link');
 
 for (let i = 0; i < menuElements.length; i++) {
@@ -114,11 +123,9 @@ for (let i = 0; i < menuElements.length; i++) {
   let offset = currentSection.offsetTop;
   $('.header__menu').removeClass('header__menu--burger');
   $('.menu__list--row').removeClass('menu__list--burger');
-  $('.header__toggle').removeClass('header__toggle--active');
-  setTimeout(
-    function() {
-        window.scrollTo(0, offset);
-    }, 300);
+  $('.header__toggle').removeClass('header__toggle--active');  
   $('body').removeClass('scroll');
+  $('body,html').animate({scrollTop: offset}, 1500);
+
   })
 }
