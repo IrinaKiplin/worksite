@@ -1266,6 +1266,7 @@ input {
 }
 
 .form {
+  position: relative;
   padding: 20px;
   background: linear-gradient(13deg, #ff8f5a 20%, #ff2f96);
   width: 600px;
