@@ -989,6 +989,11 @@ input {
     background-color: rgba(255, 143, 90, 0.5);
   }
 
+  main {
+    width: 100%;
+    overflow: hidden;
+  }
+
   .main-view {
     overflow: visible;
     margin-bottom: 180px;
@@ -996,14 +1001,13 @@ input {
 
   .main-view__container {
     min-height: 386px;
-    height: 386px;
     display: flex;
   }
 
   .main-view__column-left {
-    position: static;
     margin-top: 195px;
     text-align: center;
+    padding-right: 20px;
   }
 
   .h--1 {

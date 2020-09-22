@@ -50,48 +50,62 @@ $('.header__toggle').on('click', function(e) {
 
 $(document).ready(function(){
   $('input[type="tel"]').inputmask({ "mask": "+7 (999) 999-99-99" });
-    $('form').each(function () {
-
+    
+  $('form').each(function () {
     $(this).validate({
+
       errorPlacement(error, element) {
         return true;
       },
+
       focusInvalid: false,
+
       rules: {
         Телефон: {
           required: true,
+          minlength: 10
         },
         Имя: {
           required: true,
         },
         ЭлектроннаяПочта: {
           required: true,
+          email: true
+        },
+        Согласие: {
+          required: true,
         }
       },
+
       messages: {
         Телефон: {
-          required: 'Нужно что-то ввести'
+          required: 'Нужно что-то ввести',
+          minlength: 'Введите 10 цифр'
         },
         Имя: {
           required: 'Нужно что-то ввести'
         },
         ЭлектроннаяПочта: {
-          required: 'Нужно что-то ввести'
-        }
+          required: 'Нужно что-то ввести',
+          email: 'Адрес электронной почты должен быть в формте name@domain.com'
+        },
+        Согласие: {
+          required: 'Нужно проставить галочку с отметкой о согласии'
+        },
       },
+
       submitHandler(form) {
-      let th = $(form);
+        let th = $(form);
 
-      $.ajax({
-      type: 'POST',
-      url: 'mail.php',
-      data: th.serialize(),
-    }).done(() => {
+        $.ajax({
+          type: 'POST',
+          url: 'mail.php',
+          data: th.serialize(),
+          }).done(() => {
+          th.trigger('reset');
+        });
 
-      th.trigger('reset');
-    });
-
-      return false;
+        return false;
       }
     });
   });
@@ -99,7 +113,6 @@ $(document).ready(function(){
 
 function submitForm() {
   var formData = $('.form__data').val();
-
   if (formData.length !== 0) {
     $('.form__data').removeClass('error');
   } else {
@@ -111,6 +124,8 @@ $('.form__button').on('click', submitForm);
 
 $('.form__close').on('click', function(e) {
   $('.form-overlay').removeClass('form-overlay--visible');
+  $('.form__data').removeClass('error');
+  $('.form__data').val('');
 });
 
 let menuElements = document.querySelectorAll('.menu__link');
