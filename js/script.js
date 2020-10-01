@@ -58,7 +58,7 @@ $(document).ready(function(){
       rules: {
         Телефон: {
           required: true,
-          minlength: 18
+          minlength: 10
         },
         Имя: {
           required: true,
