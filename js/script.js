@@ -1,7 +1,5 @@
 $(document).ready(function(){
-
   $('.elements').addClass('elements--active');
-
 });
 
 new Swiper('.slider', {
@@ -53,17 +51,14 @@ $(document).ready(function(){
     
   $('form').each(function () {
     $(this).validate({
-
       errorPlacement(error, element) {
         return true;
       },
-
-      focusInvalid: false,
-
+      focusInvalid: false,    
       rules: {
         Телефон: {
           required: true,
-          minlength: 10
+          minlength: 18
         },
         Имя: {
           required: true,
@@ -71,10 +66,10 @@ $(document).ready(function(){
         ЭлектроннаяПочта: {
           required: true,
           email: true
-        },
-        Согласие: {
-          required: true,
         }
+        /*Согласие: {
+          required: true,
+        },*/
       },
 
       messages: {
@@ -88,10 +83,10 @@ $(document).ready(function(){
         ЭлектроннаяПочта: {
           required: 'Нужно что-то ввести',
           email: 'Адрес электронной почты должен быть в формте name@domain.com'
-        },
-        Согласие: {
+        }
+        /*Согласие: {
           required: 'Нужно проставить галочку с отметкой о согласии'
-        },
+        },*/
       },
 
       submitHandler(form) {
@@ -101,12 +96,16 @@ $(document).ready(function(){
           type: 'POST',
           url: 'mail.php',
           data: th.serialize(),
-          }).done(() => {
+        }).done(() => {
+          $('.form__sented').addClass('form__sented--active');
+          $('.form').removeClass('form--visible');
+          console.log('отправлено');
           th.trigger('reset');
         });
 
         return false;
       }
+
     });
   });
 });

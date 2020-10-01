@@ -21,6 +21,7 @@ formOverLay.addEventListener('click', (e) => {
     formOverLay.classList.remove('form-overlay--visible');
     forms.forEach((el) => {
       el.classList.remove('form--visible');
+      $('.form__sented').removeClass('form__sented--active');      
     });
     formData.forEach((el) => {
       el.classList.remove('error');

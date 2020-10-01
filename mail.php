@@ -1,5 +1,20 @@
 <?php
+	$recepient = "palladium-00@mail.ru";
+	$formname = "Запрос информации";
 
+	$name = trim($_POST["Имя"]);
+	$phone  = trim($_POST["Телефон"]);
+	$email  = trim($_POST["ЭлектроннаяПочта"]);
+
+	$message = "Имя: $name \nТелефон: $phone \nЭлектроннаяПочта: $email";
+
+	$pagetitle = "Заявка с сайта \"deepsees-ekb.ru\", форма \"$formname\"";
+
+mail($recepient, $pagetitle, $message, "Content-type: text/plain; charset=\"utf-8\"\n From: $recepient" );
+
+//С онлайн-сессий по веб-разработке
+
+/*
 $method = $_SERVER['REQUEST_METHOD'];
 
 //Script Foreach
@@ -22,7 +37,7 @@ if ( $method === 'POST' ) {
 	}
 } else if ( $method === 'GET' ) {
 
-	$project_name = trim($_GET["project_name"]);
+	$project_name = trim($_GET["project_name"]);		
 	$admin_email  = trim($_GET["admin_email"]);
 	$form_subject = trim($_GET["form_subject"]);
 
@@ -49,4 +64,4 @@ $headers = "MIME-Version: 1.0" . PHP_EOL .
 'From: '.adopt($project_name).' <'.$admin_email.'>' . PHP_EOL .
 'Reply-To: '.$admin_email.'' . PHP_EOL;
 
-mail($admin_email, adopt($form_subject), $message, $headers );
+mail($admin_email, adopt($form_subject), $message, $headers );*/

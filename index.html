@@ -147,7 +147,7 @@
       </section>
       <div class="forms">
         <div class="form-overlay">
-          <form class="form form--call" data-target="Заявка на звонок" method="POST" action="">
+          <form class="form form--call" data-target="Заявка на звонок" method="post">
             <input type="hidden" name="project_name" value="Тест">
             <input type="hidden" name="admin_email" value="palladium-00@mail.ru">
             <input type="hidden" name="form_subject" value="Тема">
@@ -196,8 +196,11 @@
             <button class="form__button" type="submit" value="Заказать">Заказать</button>
             <button class="form__close" type="button" aria-label="Закрыть форму">
               <span></span>
-            </button>
+            </button>            
           </form>
+          <div class="form__sented">
+            Спасибо за запрос!<br>Мы свяжемся с вами указанным способом
+          </div>
         </div>
       </div>
     </main>

@@ -1389,6 +1389,27 @@ input {
   transform: translateY(12px) rotate(45deg);
 }
 
+.form__sented  {
+  display: none;
+}
+
+.form__sented--active {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: 100px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background: linear-gradient(13deg, #ff8f5a 20%, #ff2f96);;
+}
+
+
 @media (max-width: 1023px) {
   .form {
     padding: 15px;
@@ -1455,6 +1476,11 @@ input {
 
   .form__close span::after {
     transform: translateY(13px) rotate(45deg);
+  }
+
+  .form__sented--active {
+    width: 250px;
+    font-size: 18px;
   }
 }
 
