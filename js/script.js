@@ -37,6 +37,7 @@ new Swiper('.slider', {
 
 });
 
+//Бургер-меню
 $('.header__toggle').on('click', function(e) {
   e.preventDefault;
   $(this).toggleClass('header__toggle--active');
@@ -45,71 +46,7 @@ $('.header__toggle').on('click', function(e) {
   $('body').toggleClass('scroll');
 });
 
-
-$(document).ready(function(){
-  $('input[type="tel"]').inputmask({ "mask": "+7 (999) 999-99-99" });
-    
-  $('form').each(function () {
-    $(this).validate({
-      errorPlacement(error, element) {
-        return true;
-      },
-      focusInvalid: false,    
-      rules: {
-        Телефон: {
-          required: true,
-          minlength: 10
-        },
-        Имя: {
-          required: true,
-        },
-        ЭлектроннаяПочта: {
-          required: true,
-          email: true
-        }
-        /*Согласие: {
-          required: true,
-        },*/
-      },
-
-      messages: {
-        Телефон: {
-          required: 'Нужно что-то ввести',
-          minlength: 'Введите 10 цифр'
-        },
-        Имя: {
-          required: 'Нужно что-то ввести'
-        },
-        ЭлектроннаяПочта: {
-          required: 'Нужно что-то ввести',
-          email: 'Адрес электронной почты должен быть в формте name@domain.com'
-        }
-        /*Согласие: {
-          required: 'Нужно проставить галочку с отметкой о согласии'
-        },*/
-      },
-
-      submitHandler(form) {
-        let th = $(form);
-
-        $.ajax({
-          type: 'POST',
-          url: 'mail.php',
-          data: th.serialize(),
-        }).done(() => {
-          $('.form__sented').addClass('form__sented--active');
-          $('.form').removeClass('form--visible');
-          console.log('отправлено');
-          th.trigger('reset');
-        });
-
-        return false;
-      }
-
-    });
-  });
-});
-
+//Проверка формы на пустые поля
 function submitForm() {
   var formData = $('.form__data').val();
   if (formData.length !== 0) {
@@ -118,15 +55,74 @@ function submitForm() {
     $('.form__data').addClass('error');
   };
 };
-
 $('.form__button').on('click', submitForm);
 
+//Отправка формы, валидность
+$(document).ready(function(){
+  $('input[type="tel"]').inputmask({ "mask": "+7 (999) 999-99-99" });
+
+  $('form').each(function () {
+    
+    $(this).validate({
+      errorPlacement(error, element) {
+        return true;
+      },      
+
+      focusInvalid: false,    
+      rules: {
+        Phone: {
+          required: true,
+          minlength: 12
+        },
+        Name: {
+          required: true,
+        },
+        Email: {
+          required: true,
+          email: true
+        }
+      },
+      messages: {
+        Phone: {
+          required: 'Нужно что-то ввести',
+          minlength: 'Введите 10 цифр'
+        },
+        Name: {
+          required: 'Нужно что-то ввести'
+        },
+        Email: {
+          required: 'Нужно что-то ввести',
+          email: 'Адрес электронной почты должен быть в формте name@domain.com'
+        }
+      },      
+      submitHandler(form) {
+        let th = $(form);
+          
+        $.ajax({
+          type: 'POST',
+          url: 'mail.php',
+          data: th.serialize(),
+        }).done(() => {
+          th.trigger('reset');
+          $('.form__sented').addClass('form__sented--active');
+          $('.form').removeClass('form--visible');
+          console.log('отправлено');
+        });
+        return false;
+        }
+        
+    });
+  });
+});
+
+//Закрытие формы по крестику
 $('.form__close').on('click', function(e) {
   $('.form-overlay').removeClass('form-overlay--visible');
   $('.form__data').removeClass('error');
   $('.form__data').val('');
 });
 
+//Пролистывание по клику на элементы меню
 let menuElements = document.querySelectorAll('.menu__link');
 
 for (let i = 0; i < menuElements.length; i++) {

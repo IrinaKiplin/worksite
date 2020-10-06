@@ -2,15 +2,15 @@
 	$recepient = "palladium-00@mail.ru";
 	$formname = "Запрос информации";
 
-	$name = trim($_POST["Имя"]);
-	$phone  = trim($_POST["Телефон"]);
-	$email  = trim($_POST["ЭлектроннаяПочта"]);
+	$name = trim($_POST["Name"]);
+	$phone  = trim($_POST["Phone"]);
+	$email  = trim($_POST["Email"]);
 
-	$message = "Имя: $name \nТелефон: $phone \nЭлектроннаяПочта: $email";
+	$message = "Name: $name \Phone: $phone \Email: $email";
 
 	$pagetitle = "Заявка с сайта \"deepsees-ekb.ru\", форма \"$formname\"";
 
-mail($recepient, $pagetitle, $message, "Content-type: text/plain; charset=\"utf-8\"\n From: $recepient" );
+mail($recepient, $pagetitle, $message, "Content-type: text/plain; charset=\"utf-8\"\n From: $recepient");
 
 //С онлайн-сессий по веб-разработке
 
