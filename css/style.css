@@ -1313,8 +1313,11 @@ input {
 	user-select: none;
 }
 
-.form__check input {
-	display: none;
+.form__checked {
+  margin: 0;
+  font-size: 0;
+  width: 0;
+  height: 0;
 }
 
 .form__check span {

@@ -58,10 +58,10 @@ function submitForm() {
 $('.form__button').on('click', submitForm);
 
 //Отправка формы, валидность
-$(document).ready(function(){
+$(document).ready(function() {
   $('input[type="tel"]').inputmask({ "mask": "+7 (999) 999-99-99" });
 
-  $('form').each(function () {
+  $('form').each(function() {
     
     $(this).validate({
       errorPlacement(error, element) {
@@ -70,37 +70,35 @@ $(document).ready(function(){
 
       focusInvalid: false,    
       rules: {
-        Phone: {
+        name: 'required',
+        phone: {
           required: true,
           minlength: 12
         },
-        Name: {
-          required: true,
-        },
-        Email: {
+        mail: {
           required: true,
           email: true
-        }
+        },
+        agree: 'required'
       },
       messages: {
-        Phone: {
+        name: 'Нужно что-то ввести',
+        phone: {
           required: 'Нужно что-то ввести',
           minlength: 'Введите 10 цифр'
         },
-        Name: {
-          required: 'Нужно что-то ввести'
-        },
-        Email: {
+        mail: {
           required: 'Нужно что-то ввести',
           email: 'Адрес электронной почты должен быть в формте name@domain.com'
-        }
+        },
+        agree: 'Пожалуйста, проставьте галочку о согласии на обработку'
       },      
       submitHandler(form) {
         let th = $(form);
           
         $.ajax({
           type: 'POST',
-          url: 'mail.php',
+          url: 'ml.php',
           data: th.serialize(),
         }).done(() => {
           th.trigger('reset');
@@ -109,10 +107,10 @@ $(document).ready(function(){
           console.log('отправлено');
         });
         return false;
-        }
-        
+        }        
     });
-  });
+    
+  });  
 });
 
 //Закрытие формы по крестику

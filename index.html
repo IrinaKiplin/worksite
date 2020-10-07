@@ -147,21 +147,19 @@
       </section>
       <div class="forms">
         <div class="form-overlay">
-          <form class="form form--call" data-target="Заявка на звонок" method="post">
-            <input type="hidden" name="project_name" value="Тест">
-            <input type="hidden" name="admin_email" value="palladium-00@mail.ru">
-            <input type="hidden" name="form_subject" value="Тема">
+          <form class="form form--call" data-target="Заявка на звонок" method="post">           
+            <input type="hidden" name="admin_email" value="palladium-00@mail.ru">   
             <h2 class="form__heading">Заказать звонок</h2>
             <label class="form__input">
               <span>Ваше имя</span>
-              <input class="form__data" type="text" name="Name">
+              <input class="form__data" type="text" name="name">
             </label>
             <label class="form__input">
               <span>Номер телефона</span>
-              <input class="form__data" type="tel" name="Phone" placeholder="+7 (___) ___-__-__">
+              <input class="form__data" type="tel" name="phone" placeholder="+7 (___) ___-__-__">
             </label>
             <label class="form__check">
-              <input type="checkbox">
+              <input class="form__checked" type="checkbox" name="agree">
               <span>Нажатием на кнопку я даю свое согласие на обработку персональных данных
               в соответствии с указанными здесь условиями</span>
             </label>
@@ -171,25 +169,23 @@
             </button>
           </form>
           <form class="form form--post" data-target="Заявка на письмо" method="POST">
-            <input type="hidden" name="project_name" value="Тест">
             <input type="hidden" name="admin_email" value="palladium-00@mail.ru">
-            <input type="hidden" name="form_subject" value="Тема">
             <h2 class="form__heading">Заказать звонок</h2>
             <label class="form__input">
               <span>Ваше имя</span>
-              <input class="form__data" type="text" name="Name">
+              <input class="form__data" type="text" name="name">
             </label>
             <label class="form__input">
               <span>Номер телефона</span>
-              <input class="form__data" type="tel" name="Phone" placeholder="+7 (___) ___-__-__">
+              <input class="form__data" type="tel" name="phone" placeholder="+7 (___) ___-__-__">
             </label>
             <label class="form__input">
               <span>Адрес электронной почты</span>
-              <input class="form__data" type="email" name="Email"
+              <input class="form__data" type="email" name="mail"
               placeholder="e.g.username@example.com">
             </label>
             <label class="form__check">
-              <input type="checkbox">
+              <input class="form__checked" type="checkbox" name="agree">
               <span>Нажатием на кнопку я даю свое согласие на обработку персональных данных
               в соответствии с указанными здесь условиями</span>
             </label>
