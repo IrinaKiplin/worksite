@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="utf-8">
     <title>Оформление</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!--favicon-->
     <link rel="apple-touch-icon" sizes="180x180" href="img/manifest/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/manifest/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/manifest/favicon-16x16.png">
@@ -13,20 +15,10 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-config" content="img/manifest/browseicon-arrowrconfig.xml">
     <meta name="theme-color" content="#ffffff">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="js/jquery.inputmask.min.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
-
+    
+    <!--стили-->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js" defer></script>
-    <script src="js/scriptJS.js" defer></script>
-
   </head>
   <body>
     <header class="header">
@@ -160,7 +152,7 @@
             </label>
             <label class="form__check">
               <input class="form__checked" type="checkbox" name="agree">
-              <span>Нажатием на кнопку я даю свое согласие на обработку персональных данных
+              <span class="form__agree">Нажатием на кнопку я даю свое согласие на обработку персональных данных
               в соответствии с указанными здесь условиями</span>
             </label>
             <button class="form__button" type="submit" value="Заказать">Заказать</button>
@@ -186,7 +178,7 @@
             </label>
             <label class="form__check">
               <input class="form__checked" type="checkbox" name="agree">
-              <span>Нажатием на кнопку я даю свое согласие на обработку персональных данных
+              <span class="form__agree">Нажатием на кнопку я даю свое согласие на обработку персональных данных
               в соответствии с указанными здесь условиями</span>
             </label>
             <button class="form__button" type="submit" value="Заказать">Заказать</button>
@@ -243,6 +235,11 @@
         </div>
       </div>
     </footer>
-
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/swiper-bundle.min.js.map"></script>
+    <script src="js/jquery.inputmask.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/script.js" defer></script>    
   </body>
 </html>

@@ -32,13 +32,14 @@ html {
        url('../fonts/roboto-v20-cyrillic-900.woff') format('woff');
 }
 
-/*@font-face {
+/*иконки*/
+@font-face {
   font-family: 'FontAwesome';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/fa-regular-400.woff2') format('woff2'),
-       url('../fonts/fa-regular-400.woff') format('woff');
-}*/
+  src: url('../fonts/fontawesome-webfont.woff2?v=4.7.0.woff2') format('woff2'),
+       url('../fonts/fontawesome-webfont.woff?v=4.7.0.woff') format('woff');
+}
 
 
 *,
@@ -585,12 +586,15 @@ input {
   color: transparent;
 }
 
-/*.footer__contacts a::before {
+.fa-phone::before {
   font-family: "FontAwesome";
-  font-style: normal;
-  font-weight: 400;
   content: '\f095';
-}*/
+}
+
+.fa-envelope::before {
+  font-family: "FontAwesome";
+  content: '\f0e0';
+}
 
 .footer__connect {
   margin-right: 20px;
@@ -1310,7 +1314,8 @@ input {
 .form__check {
 	display: inline-block;
 	margin-top: 10px;
-	user-select: none;
+  user-select: none;
+  cursor: pointer;
 }
 
 .form__checked {
@@ -1320,7 +1325,7 @@ input {
   height: 0;
 }
 
-.form__check span {
+.form__agree {
 	color: #fff;
 	position: relative;
 	display: inline-block;
@@ -1328,7 +1333,7 @@ input {
   font-size: 12px;
 }
 
-.form__check span::before {
+.form__agree::before {
 	content: "";
 	position: absolute;
 	left: 0;
@@ -1339,7 +1344,7 @@ input {
 	border-radius: 4px;
 }
 
-.form__check span::after {
+.form__agree::after {
 	content: "\2714";
 	position: absolute;
 	left: 2px;
@@ -1350,10 +1355,11 @@ input {
 	transition: opacity 0.3s;
 }
 
-.form__check input:checked + span::after {
+.form__checked:checked + .form__agree::after {
 	opacity: 1;
   transition: opacity 0.3s;
 }
+
 
 .form__button {
 	margin-top: 20px;
@@ -1441,19 +1447,19 @@ input {
     margin-top: 0;
   }
 
-  .form__check span {
+  .form__agree {
     padding-left: 15px;
     font-size: 10px;
   }
 
-  .form__check span::before {
+  .form__agree::before {
     top: 4px;
     width: 10px;
     height: 10px;
     border-radius: 3px;
   }
 
-  .form__check span::after {
+  .form__agree::after {
     left: 0;
     top: 0;
     font-size: 12px;
@@ -1491,7 +1497,8 @@ input {
 	border: 3px solid red;
 }
 
-
-
-
-
+.checked--error {
+  color: #ff0000;
+  font-weight: bold;
+  font-style: italic;
+}
